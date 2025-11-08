@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero3D from './components/Hero3D';
+import StatsStrip from './components/StatsStrip';
+import { WhatWhy, PrizesTracks } from './components/InfoSections';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full bg-[#0B1020] text-[#EDEDED]">
+      <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#0B1020]/70 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <a href="#" className="text-sm font-semibold tracking-wide text-[#EDEDED]">
+            Hack 6.0
+          </a>
+          <nav className="hidden gap-6 text-sm text-[#EDEDED]/80 sm:flex">
+            <a href="#about" className="hover:text-white">What</a>
+            <a href="#prizes" className="hover:text-white">Prizes</a>
+            <a href="#people" className="hover:text-white">People</a>
+            <a href="#register" className="hover:text-white">Register</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero3D />
+        <StatsStrip />
+        <WhatWhy />
+        <PrizesTracks />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
